@@ -1,12 +1,12 @@
-import React, { PureComponent } from 'react'
-import { View, StyleSheet, Image, StatusBar } from 'react-native'
+import React, { PureComponent } from "react"
+import { View, StyleSheet, Image, StatusBar } from "react-native"
 
 const styles = StyleSheet.create({
   introbox: {
     flex: 1,
-    backgroundColor: '#041a4c',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: "#041a4c",
+    alignItems: "center",
+    justifyContent: "center"
   },
   imageLogo: {
     width: 276,
@@ -14,17 +14,21 @@ const styles = StyleSheet.create({
   },
 })
 
-export class IntroScreen extends PureComponent {
+export interface Props {
+  navigation: any;
+}
+
+export class IntroScreen extends PureComponent<Props> {
   componentDidMount(){
-    StatusBar.setBarStyle('light-content',true)
+    StatusBar.setBarStyle("light-content",true)
     setTimeout(()=>{
-      this.props.navigation.navigate('Welcome')
+      this.props.navigation.navigate("Welcome")
     },3000)
   }
   render(){
     return (
       <View style={styles.introbox}>
-        <Image source={require('../../assets/logo.png')} style={styles.imageLogo} />
+        <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
       </View>
     )
   }

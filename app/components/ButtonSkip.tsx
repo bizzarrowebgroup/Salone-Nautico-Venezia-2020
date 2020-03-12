@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import * as React from "react";
+import { Text, View, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -7,14 +7,14 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: 'white',
-    justifyContent: 'center'
+    borderColor: "white",
+    justifyContent: "center"
   },
   textSkip: {
-    fontWeight: '400',
+    fontWeight: "400",
     fontSize: 18,
-    color: 'white',
-    textAlign: 'center'
+    color: "white",
+    textAlign: "center"
   }
 });
 
