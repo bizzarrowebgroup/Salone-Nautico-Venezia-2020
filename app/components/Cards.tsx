@@ -5,8 +5,8 @@ export default class Cards extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require('../assets/logovenezia.png')} style={styles.imageLogo} />
-        <Image source={require('../assets/logovela.png')} style={styles.imageLogo2} />
+        <Image source={require('../../assets/logovenezia.png')} style={styles.imageLogo} />
+        <Image source={require('../../assets/logovela.png')} style={styles.imageLogo2} />
       </View>
     );
   }

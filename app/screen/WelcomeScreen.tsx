@@ -48,7 +48,7 @@ export class WelcomeScreen extends PureComponent<Props> {
   render() {
     return (
       <View style={styles.introbox}>
-        <Image source={require('../assets/logo.png')} style={styles.imageLogo} />
+        <Image source={require('../../assets/logo.png')} style={styles.imageLogo} />
         <Text style={styles.testoOrganizzato}>{'Evento organizzato da'}</Text>
         <Cards />
       </View>

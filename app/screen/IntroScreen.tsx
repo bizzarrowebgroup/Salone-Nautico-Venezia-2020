@@ -24,7 +24,7 @@ export class IntroScreen extends PureComponent {
   render(){
     return (
       <View style={styles.introbox}>
-        <Image source={require('../assets/logo.png')} style={styles.imageLogo} />
+        <Image source={require('../../assets/logo.png')} style={styles.imageLogo} />
       </View>
     )
   }

@@ -1,12 +1,55 @@
 {
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "test:watch": "jest --watchAll",
+    "test": "jest",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./app",
+    "typescript": "tsc --noEmit",
+    "ci": "yarn lint && yarn typescript && yarn test --coverage",
+    "storybook": "start-storybook -p 7007",
+    "prestorybook": "rnstl"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ],
+    "preset": "jest-expo",
+    "collectCoverageFrom": [
+      "app/**/*.(js|jsx|ts|tsx)"
+    ]
+  },
   "name": "salone-nautico-di-venezia-2020",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Un app per il salone nautico di Venezia",
   "author": "BWG <info@bizzarro.org>",
   "private": true,
-  "main": "node_modules/expo/AppEntry.js",
   "devDependencies": {
-    "babel-preset-expo": "^7.0.0"
+    "babel-loader": "8.0.6",
+    "babel-preset-expo": "8.0.0",
+    "@babel/core": "7.7.7",
+    "@storybook/addon-actions": "5.2.8",
+    "@storybook/addon-links": "5.2.8",
+    "@storybook/addons": "5.2.8",
+    "@storybook/react-native": "5.2.8",
+    "@storybook/react-native-server": "5.2.8",
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.18",
+    "@types/react": "16.9.16",
+    "@types/react-native": "0.60.25",
+    "@types/react-test-renderer": "16.9.1",
+    "@types/uuid": "3.4.6",
+    "@typescript-eslint/eslint-plugin": "2.11.0",
+    "@typescript-eslint/parser": "2.11.0",
+    "eslint": "6.7.2",
+    "eslint-plugin-jest": "23.1.1",
+    "eslint-plugin-react": "7.17.0",
+    "jest-expo": "36.0.1",
+    "react-native-storybook-loader": "1.8.1"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.1",
@@ -14,12 +57,30 @@
     "@react-navigation/material-top-tabs": "^5.0.5",
     "@react-navigation/native": "^5.0.5",
     "@react-navigation/stack": "latest",
-    "expo": "^36.0.0",
-    "react": "16.9.0",
+    "expo": "36.0.1",
+    "expo-asset": "8.0.0",
+    "expo-constants": "8.0.0",
+    "expo-font": "8.0.0",
+    "react": "16.12.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "1.4.0",
     "react-native-safe-area-context": "0.6.0",
-    "react-native-screens": "^2.0.0-beta.0"
-  }
+    "react-native-screens": "^2.0.0-beta.0",
+    "typescript": "3.7.4",
+    "uuid": "3.4.0",
+    "prop-types": "15.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn ci"
+    }
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "pattern": "**/*.story.tsx",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  },
+  "license": "GPLv3"
 }

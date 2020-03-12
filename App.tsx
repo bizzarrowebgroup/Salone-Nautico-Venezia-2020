@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 // import AssetExample from './components/AssetExample';
-import { IntroScreen } from './screen/IntroScreen';
-import { WelcomeScreen } from './screen/WelcomeScreen';
-import { WelcomeScreenIntro } from './screen/WelcomeScreenIntro';
+import { IntroScreen } from './app/screen/IntroScreen';
+import { WelcomeScreen } from './app/screen/WelcomeScreen';
+import { WelcomeScreenIntro } from './app/screen/WelcomeScreenIntro';
 
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';

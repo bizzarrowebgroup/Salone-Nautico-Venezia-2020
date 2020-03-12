@@ -4,13 +4,13 @@
     "description": "Applicazione del Salone Nautico di Venezia",
     "slug": "salone-nautico-venezia-2020",
     "privacy": "unlisted",
-    "sdkVersion": "36.0.0",
-    "version": "1.0.0",
+    "sdkVersion": "36.0.1",
+    "version": "0.0.2",
     "orientation": "portrait",
-    "primaryColor": "#cccccc",
-    "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+    "primaryColor": "#041a4c",
+    "icon": "./assets/icons/app-icon.png",
     "loading": {
-      "icon": "https://d1wp6m56sqw74a.cloudfront.net/~assets/c9aa1be8a6a6fe81e20c3ac4106a2ebc",
+      "icon": "./assets/icons/loading-icon.png",
       "hideExponentText": true
     },
     "packagerOpts": {
@@ -23,6 +23,15 @@
     },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#041a4c"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"]
   }
 }
