@@ -1,0 +1,25 @@
+{
+  "name": "salone-nautico-di-venezia-2020",
+  "version": "0.0.1",
+  "description": "Un app per il salone nautico di Venezia",
+  "author": "BWG <info@bizzarro.org>",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "devDependencies": {
+    "babel-preset-expo": "^7.0.0"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.1",
+    "@react-navigation/material-bottom-tabs": "^5.0.5",
+    "@react-navigation/material-top-tabs": "^5.0.5",
+    "@react-navigation/native": "^5.0.5",
+    "@react-navigation/stack": "latest",
+    "expo": "^36.0.0",
+    "react": "16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz",
+    "react-native-gesture-handler": "^1.6.0",
+    "react-native-reanimated": "1.4.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "^2.0.0-beta.0"
+  }
+}
