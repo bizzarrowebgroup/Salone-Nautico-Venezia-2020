@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import {Text, TouchableWithoutFeedback, View, StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "white",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginVertical: 5
   },
   textSkip: {
     fontWeight: "400",
@@ -18,12 +19,24 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class ButtonSkip extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.textSkip}>{"Skip"}</Text>
-      </View>
-    );
-  }
+interface Props {
+  buttonText?: string;
+  onPress?: () => void;
 }
+
+const defaultProps: Props = {
+  buttonText: "Skip"
+};
+
+const ButtonSkip: React.SFC<Props> = props => {
+  const {buttonText, onPress} = props;
+  return (<TouchableWithoutFeedback onPress={onPress}>
+    <View style={styles.container}>
+      <Text style={styles.textSkip}>{buttonText}</Text>
+    </View>
+  </TouchableWithoutFeedback>);
+};
+
+ButtonSkip.defaultProps = defaultProps;
+
+export default ButtonSkip;

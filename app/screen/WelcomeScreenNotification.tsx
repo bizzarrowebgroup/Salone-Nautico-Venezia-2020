@@ -10,7 +10,8 @@ import {
 
 const {height} = Dimensions.get("screen");
 
-import {ButtonSkip} from "../components";
+import ButtonSkip from "../components/ButtonSkip";
+import Card from "../components/Card";
 
 const styles = StyleSheet.create({
   introbox: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 43,
     color: "white",
-    textAlign: "left"
+    textAlign: "right"
   },
   testo2: {
     fontWeight: "bold",
@@ -37,26 +38,18 @@ const styles = StyleSheet.create({
   },
   contenitoretesti: {
     marginHorizontal: 60,
-    // marginVertical: 40,
-    marginTop: height / 11,
+    marginVertical: 40
   }
 });
 
-export interface Props {
+interface Props {
   navigation: any;
 }
 
-export class WelcomeScreenIntro extends PureComponent<Props> {
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.navigation.navigate("WelcomeNotification");
-    }, 3000);
-  }
-  navigateTo(){
-    this.props.navigation.navigate("WelcomeNotification");
-  }
+export class WelcomeScreenNotification extends PureComponent<Props> {
   render() {
-    return (<ImageBackground source={require("../../assets/bg.png")} style={styles.introbox}>
+    const { navigation } = this.props;
+    return (<ImageBackground source={require("../../assets/bg_2.png")} style={styles.introbox} resizeMode={"cover"}>
       <View style={{
           width: "100%",
           height: "100%",
@@ -69,17 +62,21 @@ export class WelcomeScreenIntro extends PureComponent<Props> {
           top: 60,
           right: 25
         }}>
-        <ButtonSkip onPress={() => this.navigateTo()}/>
+        <ButtonSkip buttonText={"skip"} />
+        <ButtonSkip buttonText={"back"} onPress={()=>{navigation.goBack()}}/>
       </View>
       <Image source={require("../../assets/logo.png")} style={styles.imageLogo}/>
       <View style={styles.contenitoretesti}>
-        <Text style={styles.testo1}>{"Benvenuto"}</Text>
-        <Text style={styles.testo2}>
-          {"Sei pronto a festeggiare l’arte ed \nil mare?"}
-        </Text>
+        <Text style={styles.testo1}>{"Abilita le Notifiche ora!"}</Text>
       </View>
+      <Card 
+        isIntro={false} 
+        cardText={"Migliora la tua esperienza, rimani aggiornato!"} 
+        cardButton={"ATTIVA LE NOTIFICHE"}
+        onPress={()=>{navigation.navigate("Home")}}
+      />
     </ImageBackground>);
   }
 }
 
-export default WelcomeScreenIntro;
+export default WelcomeScreenNotification;

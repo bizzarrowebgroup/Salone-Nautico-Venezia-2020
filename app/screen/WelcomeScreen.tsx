@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { View, StyleSheet, Image, Text, Dimensions, Platform } from "react-native";
 
-import Cards from "../components/Cards";
+import { Card } from "../components";
 
 let height = 0, MARGINTOP = 0;
 
@@ -42,7 +42,7 @@ export interface Props {
 export class WelcomeScreen extends PureComponent<Props> {
   componentDidMount(){
     setTimeout(()=>{
-      this.props.navigation.navigate("Welcome1")
+      this.props.navigation.navigate("WelcomeIntro")
     },3000)
   }
   render() {
@@ -50,7 +50,7 @@ export class WelcomeScreen extends PureComponent<Props> {
       <View style={styles.introbox}>
         <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
         <Text style={styles.testoOrganizzato}>{"Evento organizzato da"}</Text>
-        <Cards />
+        <Card isIntro={true} onPress={()=>this.props.navigation.navigate("WelcomeIntro")}/>
       </View>
     );
   }

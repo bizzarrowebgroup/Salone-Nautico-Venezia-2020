@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { View, StyleSheet, Image, StatusBar } from "react-native"
+import { View, StyleSheet, Image, StatusBar, ActivityIndicator } from "react-native"
 
 const styles = StyleSheet.create({
   introbox: {
@@ -29,6 +29,7 @@ export class IntroScreen extends PureComponent<Props> {
     return (
       <View style={styles.introbox}>
         <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
+        <ActivityIndicator color={"white"} animating size={"large"} style={{marginVertical:20}}/>
       </View>
     )
   }
