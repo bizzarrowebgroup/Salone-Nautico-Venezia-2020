@@ -4,3 +4,5 @@ package-lock.json
 assets/.DS_Store
 assets/icons/.DS_Store
 yarn.lock
+.expo
+.expo-shared
