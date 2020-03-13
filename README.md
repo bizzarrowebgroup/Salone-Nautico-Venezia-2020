@@ -1,4 +1,4 @@
-# 🌱 React Native app per il Salone Nautico di Venezia
+# ⛴ React Native app per il Salone Nautico di Venezia
 
 Codice sorgente dell'App del [Salone Nautico di Venezia](https://www.salonenautico.venezia.it/).
 Fatta con React Native e Expo, e Typescript.
