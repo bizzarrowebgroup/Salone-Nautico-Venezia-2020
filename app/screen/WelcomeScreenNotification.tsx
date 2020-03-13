@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Updates } from "expo";
 
-import { registerForPushNotificationsAsync } from "../index"
+import registerForPushNotificationsAsync from "../Notifications"
 
 const { height } = Dimensions.get("screen");
 
@@ -53,16 +53,12 @@ export class WelcomeScreenNotification extends PureComponent<Props> {
   state = {
     notificationsOk: false
   }
-  // componentDidMount() {
-  //   this.setState({
-  //     notificationsOk: false
-  //   })
-  // }
   async onPressNotifications() {
     console.log("pressed_push_notifications")
-    const token = await registerForPushNotificationsAsync();
+    // const token = await registerForPushNotificationsAsync(); use this without the Simulator
+    const token = true;
     if (token) {
-      token.toString() // this is the token of the push notifications :D
+      // token.toString() // this is the token of the push notifications :D
       this.setState({ notificationsOk: true })
     }
   }

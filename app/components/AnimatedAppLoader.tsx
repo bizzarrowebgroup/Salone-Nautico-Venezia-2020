@@ -53,9 +53,14 @@ function AnimatedSplashScreen({ children, image }) {
             const images = [
                 require("../../assets/bg.png"),
                 require("../../assets/bg_2.png"),
+                require("../../assets/bg_3.png"),
                 require("../../assets/logo.png"),
                 require("../../assets/logovela.png"),
                 require("../../assets/logovenezia.png"),
+                require("../../assets/menu_icon.png"),
+                require("../../assets/play_icon.png"),
+                require("../../assets/welcome_text.png"),
+                require("../../assets/intro_video.mp4")
             ];
             // const fonts = [{
             //     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),

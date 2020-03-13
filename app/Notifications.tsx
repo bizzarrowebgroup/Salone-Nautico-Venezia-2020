@@ -15,7 +15,7 @@ export default async function registerForPushNotificationsAsync() {
     alert("Ci dispiace, attiva i permessi per ricevere le notifiche!");
     return;
   }
-
+  
   // Get the token that identifies this device
   const token = await Notifications.getExpoPushTokenAsync();
   console.log(token,"[token-registerForPushNotificationsAsync]")

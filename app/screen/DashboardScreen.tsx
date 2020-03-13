@@ -1,24 +1,20 @@
-import React, { PureComponent } from "react"
-import { Text, View, StyleSheet, StatusBar } from "react-native"
-import Constants from "expo-constants"
+import React from "react";
+import {View, StyleSheet, ScrollView} from "react-native";
+import {Header, VideoHomePage} from "../components/index";
 
 const styles = StyleSheet.create({
-    dashboardBox: {
-        paddingTop: Constants.statusBarHeight,
-    },
-})
+  dashboardBox: {
+    flex: 1,
+  }
+});
 
-export class DashboardScreen extends PureComponent {
-    componentDidMount() {
-        StatusBar.setBarStyle('dark-content',true)
-    }
-    render() {
-        return (
-            <View style={styles.dashboardBox}>
-                <Text> textInComponent </Text>
-            </View>
-        )
-    }
+export function DashboardScreen() {
+  return (<View style={styles.dashboardBox}>
+    <Header/>
+    <ScrollView style={{ zIndex: -1, top: -30 }}>
+      <VideoHomePage/>
+    </ScrollView>
+  </View>);
 }
 
-export default DashboardScreen
+export default DashboardScreen;
