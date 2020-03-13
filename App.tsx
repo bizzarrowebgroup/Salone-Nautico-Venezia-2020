@@ -7,7 +7,7 @@ import { Routes } from "./app/index";
 import { AnimatedAppLoader } from "./app/components"
 
 SplashScreen.preventAutoHide();
-YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
+// YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
 
 export default function App() {
   return (

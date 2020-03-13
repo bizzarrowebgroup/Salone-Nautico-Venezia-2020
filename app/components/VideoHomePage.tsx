@@ -1,4 +1,4 @@
-import React, {useState,useRef,useEffect} from "react";
+import React, {useState,useRef} from "react";
 import {View, StyleSheet, Image, Dimensions, ImageBackground, TouchableWithoutFeedback} from "react-native";
 import Constants from "expo-constants";
 import {Video} from "expo-av";
@@ -56,26 +56,15 @@ const VideoHomePage:React.FC = (props : Props) => {
       setisBig(!isBig)
       _videoPlayer.current.presentFullscreenPlayer()
     }
-    // if (_videoPlayer.current && isVideoPlaying && !isBig){
-    //   setisBig(!isBig)
-    //   _videoPlayer.current.presentFullscreenPlayer()
-    // }
   }
-  // const stopVideo = () => {
-  //   setisVideoPlaying(!isVideoPlaying)
-  //   setisBig(!isBig)
-  // }
 
-  const checkBig = (i) => {
-    // if(typeof i.fullscreenUpdate == "number"){
-    //   // setisVideoPlaying(!isVideoPlaying)
-    //   // setisBig(!isBig)
-    //   // console.log(typeof i.fullScreenUpdate ,"we")
-    // }
-    // console.log(i.fullscreenUpdate ,"we")
-    // console.log(i["fullscreenUpdate"] ,"we")
-    // console.log(typeof i.fullScreenUpdate ,"we")
-    // console.log(typeof i["fullScreenUpdate"] ,"we")
+  const checkBig = async(i) => {
+    const StateVideo = i.fullscreenUpdate;
+    if(StateVideo > 2) {
+      setisVideoPlaying(!isVideoPlaying)
+      setisBig(!isBig)
+    }
+   
   }
 
   return (<ImageBackground source={require("../../assets/bg_3.png")} style={styles.videoHomeBox}>
@@ -90,10 +79,7 @@ const VideoHomePage:React.FC = (props : Props) => {
         shouldPlay={true} 
         isLooping={false} 
         style={styles.videoBoxStyle}
-        // onTouchCancel={()=>stopVideo()}
-        // onTouchEnd={()=>stopVideo()}
-        // onTouchStart={()=>playVideo()}
-        // onFullscreenUpdate={(a) => checkBig(a)}
+        onFullscreenUpdate={(a) => checkBig(a)}
         onPlaybackStatusUpdate={(playbackStatus) => _onPlaybackStatusUpdate(playbackStatus)}
       />}
       <View style={styles.opacityBox}/>
