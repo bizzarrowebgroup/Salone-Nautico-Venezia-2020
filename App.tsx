@@ -1,26 +1,18 @@
 import * as React from "react";
+import { SplashScreen } from "expo";
+import { YellowBox } from "react-native";
 
-// import AssetExample from './components/AssetExample';
+// import AssetExample from "./components/AssetExample";
+import { Routes } from "./app/index";
+import { AnimatedAppLoader } from "./app/components"
 
-import { IntroScreen } from "./app/screen/IntroScreen";
-import { WelcomeScreen } from "./app/screen/WelcomeScreen";
-import { WelcomeScreenIntro } from "./app/screen/WelcomeScreenIntro";
-import { WelcomeScreenNotification } from "./app/screen/WelcomeScreenNotification";
-
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-
-const Stack = createStackNavigator();
+SplashScreen.preventAutoHide();
+YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" headerMode={"none"}>
-        <Stack.Screen name="Home" component={IntroScreen} />
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="WelcomeIntro" component={WelcomeScreenIntro} />
-        <Stack.Screen name="WelcomeNotification" component={WelcomeScreenNotification} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AnimatedAppLoader image={require("./assets/splash.png")}>
+      <Routes />
+    </AnimatedAppLoader>
   );
 }

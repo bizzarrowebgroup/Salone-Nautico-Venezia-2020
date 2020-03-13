@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 55
   },
+  textNotificationSmile: {
+    fontSize: 80,
+    marginTop: 66
+  },
   buttonNotification: {
     borderWidth: 1,
     borderColor: "black",
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
 
 export interface Props {
   isIntro: boolean;
+  doSmile?: boolean;
   cardText?: string;
   cardButton?: string;
   onPress?: () => void;
@@ -48,7 +53,7 @@ export interface Props {
 
 export default class Card extends React.Component<Props> {
   render() {
-    const {isIntro, cardText, cardButton, onPress} = this.props;
+    const {isIntro, cardText, cardButton, onPress, doSmile} = this.props;
     if (isIntro) {
       return (<TouchableOpacity onPress={onPress} style={[
           styles.container, {
@@ -67,10 +72,13 @@ export default class Card extends React.Component<Props> {
             flexDirection: "column",
             minHeight: 281,
             marginVertical: 20,
-            marginHorizontal: 30
+            marginHorizontal: 30,
+          },
+          doSmile ? {} : {
+            minWidth: 350
           }
         ]}>
-        <Text style={styles.textNotification}>{cardText}</Text>
+        <Text style={doSmile ? styles.textNotification : styles.textNotificationSmile}>{cardText}</Text>
         {
           cardButton
             ? (<TouchableOpacity onPress={onPress} style={styles.buttonNotification}>
