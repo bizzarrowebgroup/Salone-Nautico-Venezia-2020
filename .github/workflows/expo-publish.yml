@@ -18,7 +18,7 @@ jobs:
           expo-password: ${{ secrets.EXPO_PASSWORD }}
       - run: echo 'Running NPM Install'
       - run: npm ci
-      - run: expo publish --non-interactive -u derewith -p ${{ secrets.EXPO_PASSWORD }}
+      - run: expo publish --non-interactive --u derewith --p ${{ secrets.EXPO_PASSWORD }}
         if: github.ref == 'refs/heads/master'
         env:
          EXPO_DEBUG: true
