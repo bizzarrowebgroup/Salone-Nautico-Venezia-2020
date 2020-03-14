@@ -1,24 +1,26 @@
-name: Expo Publish
+name: CI Build
 on:
   push:
-    branches: 
+    branches:
       - master
 jobs:
   publish:
+    name: Install and publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-            node-version: 12.x
+          node-version: 12.x
       - uses: expo/expo-github-action@v5
         with:
-            expo-version: 3.13.1
-            expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-            expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
-            expo-cache: true
-      - run: yarn install
+          expo-version: 3.13.1
+          expo-username: ${{ secrets.EXPO_USERNAME }}
+          expo-password: ${{ secrets.EXPO_PASSWORD }}
+      - run: echo 'Running NPM Install'
+      - run: npm ci
+      - run: npm run test:ci
       - run: expo publish --non-interactive
         if: github.ref == 'refs/heads/master'
         env:
-          EXPO_DEBUG: true
+         EXPO_DEBUG: true
