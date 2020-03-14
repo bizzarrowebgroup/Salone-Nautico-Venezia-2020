@@ -1,6 +1,8 @@
 import React from "react"
-import { StyleSheet, Text, Dimensions, ImageBackground } from "react-native"
+import { StyleSheet, View, Dimensions, ImageBackground } from "react-native"
 import Constants from "expo-constants";
+import { LinearGradient } from "expo-linear-gradient";
+
 const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
 
 const styles = StyleSheet.create({
@@ -8,6 +10,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "white",
         height: SCREEN_HEIGHT
+    },
+    overBox: {
+        flex: 1,
+        // backgroundColor: "#3649b7",
+        opacity: .5
     }
 })
 export interface Props {
@@ -21,7 +28,8 @@ export interface Props {
 const ExpositorCard: React.FC = (Props) => {
     return (
         <ImageBackground style={styles.expoContainer} source={require("../../assets/bg_4.png")}>
-            <Text></Text>
+            {/* <View style={styles.overBox}/> */}
+            <LinearGradient colors={["#3649b7","#000566"]} style={styles.overBox} />
         </ImageBackground>
     )
 }
