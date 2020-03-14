@@ -18,6 +18,7 @@ jobs:
             expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
             expo-cache: true
       - run: yarn install
-      - run: expo publish
+      - run: expo publish --non-interactive
+        if: github.ref == 'refs/heads/master'
         env:
           EXPO_DEBUG: true
