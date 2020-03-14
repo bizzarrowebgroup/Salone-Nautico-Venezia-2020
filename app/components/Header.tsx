@@ -1,11 +1,12 @@
 import React from "react";
-import {View, StyleSheet, Image, TouchableWithoutFeedback} from "react-native";
+import {View, StyleSheet, Image, TouchableWithoutFeedback, Dimensions} from "react-native";
 import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
   headerBox: {
     height: Constants.statusBarHeight * 4,
     paddingTop: Constants.statusBarHeight,
+    width: Dimensions.get("screen").width,
     backgroundColor: "white",
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
