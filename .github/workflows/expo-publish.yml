@@ -7,8 +7,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          EXPO_DEBUG: true
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
@@ -19,5 +17,7 @@ jobs:
             expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
             expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
             expo-cache: true
+      - env:
+          EXPO_DEBUG: true
       - run: yarn install
       - run: expo publish
