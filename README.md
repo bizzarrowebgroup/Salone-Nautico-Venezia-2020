@@ -1,3 +1,4 @@
+![Expo Publish](https://github.com/bizzarrowebgroup/Salone-Nautico-Venezia-2020/workflows/Expo%20Publish/badge.svg)
 # ⛴ React Native app per il Salone Nautico di Venezia
 
 Codice sorgente dell'App del [Salone Nautico di Venezia](https://www.salonenautico.venezia.it/).
