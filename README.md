@@ -4,7 +4,11 @@
 
 ![screenshots](https://raw.githubusercontent.com/bizzarrowebgroup/Salone-Nautico-Venezia-2020/master/preview.jpg)
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/bizzarrowebgroup/Salone-Nautico-Venezia-2020.svg)
 ![Expo Publish](https://github.com/bizzarrowebgroup/Salone-Nautico-Venezia-2020/workflows/Expo%20Publish/badge.svg)
+[![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
+[![supports iOS](https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff)](https://github.com/expo/expo)
+[![supports Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)](https://github.com/expo/expo)
 <br />
 
 Codice sorgente dell'App del [Salone Nautico di Venezia](https://www.salonenautico.venezia.it/).
