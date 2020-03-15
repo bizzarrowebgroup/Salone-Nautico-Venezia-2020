@@ -48,7 +48,7 @@ const FirstText = () => {
 
 const SecondText = () => {
   return (
-    <View style={[styles.firstBox,{marginTop:50}]}>
+    <View style={[styles.firstBox,{marginTop:140}]}>
       <Text style={[styles.text1,styles.whiteText]}>{"Diventare "}
         <Text style={[styles.text2,styles.whiteText]}>{"sponsor\n"}</Text>
         <Text style={[styles.text1,styles.whiteText]}>{"del Salone Nautico\n"}</Text>

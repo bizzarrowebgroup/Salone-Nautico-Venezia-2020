@@ -1,9 +1,9 @@
 import React, {useState,useRef} from "react";
 import {View, StyleSheet, Image, Dimensions, ImageBackground, TouchableWithoutFeedback} from "react-native";
-import Constants from "expo-constants";
 import {Video} from "expo-av";
 
-const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
+const SCREEN_HEIGHT = Dimensions.get("screen").height ;
+// const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
 
 const styles = StyleSheet.create({
   videoHomeBox: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     height: 69,
     alignSelf: "center",
     position: "absolute",
-    bottom: 150
+    bottom: 250
   },
   opacityBox: {
     ...StyleSheet.absoluteFillObject,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     height: 189,
     alignSelf: "center",
     position: "absolute",
-    top: 266
+    top: 366
   },
   videoBoxStyle: {
     width: "100%",

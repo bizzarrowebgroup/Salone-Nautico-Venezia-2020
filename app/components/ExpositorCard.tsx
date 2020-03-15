@@ -1,9 +1,10 @@
 import React from "react"
-import { StyleSheet, View, Dimensions, ImageBackground, Text, TouchableOpacity } from "react-native"
-import Constants from "expo-constants";
+import { StyleSheet, Dimensions, ImageBackground, Text, TouchableOpacity } from "react-native"
+// import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
 
-const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
+const SCREEN_HEIGHT = Dimensions.get("screen").height;
+// const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
 
 const styles = StyleSheet.create({
     expoContainer: {
@@ -86,7 +87,7 @@ const ExpositorCard = (props: Props) => {
         if (!childrenText) return null;
     }
     return (
-        <ImageBackground style={styles.expoContainer} source={require("../../assets/bg_4.png")}>
+        <ImageBackground style={styles.expoContainer} source={require("../../assets/bg_4.png")} resizeMode={"cover"}>
             {/* <View style={styles.overBox}/> */}
             <LinearGradient colors={["#000566","#3649b7"]} style={styles.overBox}>
                 {renderFirstText()}
