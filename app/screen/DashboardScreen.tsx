@@ -23,24 +23,26 @@ const styles = StyleSheet.create({
   },
   text1:{
     fontWeight: "300",
-    fontStyle: "italic"
   },
   text2:{
     fontWeight: "bold",
-    fontStyle: "italic"
   },
   text3:{
-    fontWeight: "bold"
+    fontStyle: "normal"
   },
+  text4:{
+    fontStyle: "italic"
+  }
 });
 
 const FirstText = () => {
   return (
     <View style={styles.firstBox}>
-      <Text style={[styles.text1,styles.whiteText]}>{"Diventare "}
-        <Text style={[styles.text2,styles.whiteText]}>{"espositore\n"}</Text>
-        <Text style={[styles.text1,styles.whiteText]}>{"del Salone Nautico\n"}</Text>
-        <Text style={[styles.text3,styles.whiteText]}>{"Venezia 2020"}</Text>
+      <Text style={[styles.text1,styles.whiteText]}>
+        <Text style={styles.text4}>{"Diventare "}</Text>
+        <Text style={[styles.text2,styles.text4]}>{"espositore\n"}</Text>
+        <Text>{"del Salone Nautico\n"}</Text>
+        <Text style={[styles.text3,styles.text2]}>{"Venezia 2020"}</Text>
       </Text>
     </View>
   )
@@ -49,10 +51,11 @@ const FirstText = () => {
 const SecondText = () => {
   return (
     <View style={[styles.firstBox,{marginTop:140}]}>
-      <Text style={[styles.text1,styles.whiteText]}>{"Diventare "}
-        <Text style={[styles.text2,styles.whiteText]}>{"sponsor\n"}</Text>
-        <Text style={[styles.text1,styles.whiteText]}>{"del Salone Nautico\n"}</Text>
-        <Text style={[styles.text3,styles.whiteText]}>{"Venezia 2020"}</Text>
+      <Text style={[styles.text1,styles.whiteText]}>
+        <Text style={styles.text4}>{"Diventare "}</Text>
+        <Text style={[styles.text2,styles.text4]}>{"sponsor\n"}</Text>
+        <Text>{"del Salone Nautico\n"}</Text>
+        <Text style={[styles.text3,styles.text2]}>{"Venezia 2020"}</Text>
       </Text>
     </View>
   )
@@ -62,15 +65,19 @@ export type Props = {
   navigation: any;
 };
 
-
-export function DashboardScreen(props: Props) {
+const DashboardScreen: React.FC<Props> = ({
+  navigation
+}) => {
   useEffect(() => {
     StatusBar.setBarStyle("dark-content",true)
   }, [])
+  const onPressHome = () => {
+    navigation.toggleDrawer();
+  }
   return (<View style={styles.dashboardBox}>
-    <View style={styles.headerBox}><Header onPress={()=>props.navigation.navigate("Home")}/></View>
+    <View style={styles.headerBox}><Header onPress={()=>onPressHome()}/></View>
     <ScrollView style={styles.dashboardBox}>
-      <VideoHomePage/>
+      <VideoHomePage imageBg={{uri:"https://www.salonenautico.venezia.it/wp-content/uploads/2020/03/SNV_20_sito_2048x1280_r1_c1.jpg"}}/>
       <ExpositorCard 
         firstText={<FirstText/>} 
         secondText={<SecondText/>} 
@@ -84,4 +91,4 @@ export function DashboardScreen(props: Props) {
   </View>);
 }
 
-export default DashboardScreen;
+export default DashboardScreen

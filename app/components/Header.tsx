@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     tintColor: "#001489"
   },
   menuLogo: {
-    width: 25,
-    height: 15,
+    width: 30,
+    height: 20,
     position: "absolute",
     left: 45,
     top: Constants.statusBarHeight * 2 + 7.5
@@ -32,8 +32,9 @@ export type Props = {
   onPress?: () => void;
 };
 
-const Header = (props : Props) => {
-  const {onPress} = props;
+const Header: React.FC<Props> = ({
+  onPress
+}) => {
   return (<View style={styles.headerBox}>
     <Image source={require("../../assets/logo.png")} style={styles.imageLogo}/>
     <TouchableWithoutFeedback onPress={onPress}>
@@ -41,12 +42,5 @@ const Header = (props : Props) => {
     </TouchableWithoutFeedback>
   </View>);
 };
-
-// const HeaderMenu = (props : Props) => {
-//   const {onPress} = props;
-//   return (<TouchableWithoutFeedback onPress={onPress}>
-//     <Image source={require("../../assets/menu_icon.png")} style={styles.menuLogo}/>
-//   </TouchableWithoutFeedback>);
-// };
 
 export default Header;

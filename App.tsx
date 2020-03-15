@@ -1,13 +1,13 @@
 import * as React from "react";
 import { SplashScreen } from "expo";
-import { YellowBox } from "react-native";
 
+// import { YellowBox } from "react-native";
 // import AssetExample from "./components/AssetExample";
+// YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
 import { Routes } from "./app/index";
 import { AnimatedAppLoader } from "./app/components"
 
 SplashScreen.preventAutoHide();
-// YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
 
 export default function App() {
   return (

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { useEffect } from "react";
 import { View, StyleSheet, Image, Text, Dimensions, Platform } from "react-native";
 
 import { Card } from "../components";
@@ -12,7 +12,6 @@ if( Platform.OS === "web" ){
   height = Dimensions.get("screen").height;
   MARGINTOP = Math.round(height / 5) + 50;
 }
-
 
 const styles = StyleSheet.create({
   introbox: {
@@ -38,22 +37,21 @@ const styles = StyleSheet.create({
 export interface Props {
   navigation: any;
 }
-
-export class WelcomeScreen extends PureComponent<Props> {
-  componentDidMount(){
+const WelcomeScreen: React.FC<Props> = ({
+  navigation
+}) => {
+  useEffect(() => {
     setTimeout(()=>{
-      this.props.navigation.navigate("WelcomeIntro")
+      navigation.navigate("WelcomeIntro")
     },3000)
-  }
-  render() {
-    return (
-      <View style={styles.introbox}>
-        <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
-        <Text style={styles.testoOrganizzato}>{"Evento organizzato da"}</Text>
-        <Card isIntro={true} onPress={()=>this.props.navigation.navigate("WelcomeIntro")}/>
-      </View>
-    );
-  }
+  }, [])
+  return (
+    <View style={styles.introbox}>
+      <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
+      <Text style={styles.testoOrganizzato}>{"Evento organizzato da"}</Text>
+      <Card isIntro={true} onPress={()=>navigation.navigate("WelcomeIntro")}/>
+    </View>
+  )
 }
 
 export default WelcomeScreen

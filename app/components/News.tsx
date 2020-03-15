@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-export type NewsProps = {
-
-};
+interface NewsProps{};
 
 const styles = StyleSheet.create({
     Container: {
@@ -23,7 +21,7 @@ const styles = StyleSheet.create({
 });
 
 
-const News = (props: NewsProps) => {
+const News: React.FC<NewsProps> = () => {
     return (
         <View style={styles.Container}>
             <Text style={styles.TitleText}>{"News"}</Text>

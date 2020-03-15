@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react"
+import React, { useEffect } from "react"
 import { View, StyleSheet, Image, StatusBar, ActivityIndicator } from "react-native"
 
 const styles = StyleSheet.create({
@@ -17,22 +17,23 @@ const styles = StyleSheet.create({
 export interface Props {
   navigation: any;
 }
+const IntroScreen: React.FC<Props> = ({
+  navigation
+}) => {
 
-export class IntroScreen extends PureComponent<Props> {
-  componentDidMount(){
+  useEffect(() => {
     StatusBar.setBarStyle("light-content",true)
     setTimeout(()=>{
-      this.props.navigation.navigate("Welcome")
+      navigation.navigate("Welcome")
     },3000)
-  }
-  render(){
-    return (
-      <View style={styles.introbox}>
-        <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
-        <ActivityIndicator color={"white"} animating size={"large"} style={{marginVertical:20}}/>
-      </View>
-    )
-  }
+  }, [])
+
+  return (
+    <View style={styles.introbox}>
+      <Image source={require("../../assets/logo.png")} style={styles.imageLogo} />
+      <ActivityIndicator color={"white"} animating size={"large"} style={{marginVertical:20}}/>
+    </View>
+  )
 }
 
 export default IntroScreen

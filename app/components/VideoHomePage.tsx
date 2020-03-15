@@ -1,8 +1,8 @@
-import React, {useState,useRef} from "react";
-import {View, StyleSheet, Image, Dimensions, ImageBackground, TouchableWithoutFeedback} from "react-native";
-import {Video} from "expo-av";
+import React, {useState,useRef} from "react"
+import {View, StyleSheet, Image, Dimensions, ImageBackground, TouchableWithoutFeedback, ImageSourcePropType} from "react-native"
+import {Video} from "expo-av"
 
-const SCREEN_HEIGHT = Dimensions.get("screen").height ;
+const SCREEN_HEIGHT = Dimensions.get("screen").height
 // const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
 
 const styles = StyleSheet.create({
@@ -35,16 +35,18 @@ const styles = StyleSheet.create({
     width: "100%",
     height: SCREEN_HEIGHT
   }
-});
+})
 
-export type Props = {};
+interface Props {
+  imageBg: ImageSourcePropType;
+}
 
-const VideoHomePage:React.FC = (props : Props) => {
+const VideoHomePage: React.FC<Props> = ({imageBg}) => {
   const [isVideoPlaying, setisVideoPlaying] = useState(false)
   const [isBig, setisBig] = useState(false)
   const _videoPlayer =  useRef<Video>(null)
 
-  const playVideo = () => {
+  const playVideo = () =>{
     setisVideoPlaying(!isVideoPlaying)
   }
   const _onPlaybackStatusUpdate = (i) => {
@@ -67,7 +69,7 @@ const VideoHomePage:React.FC = (props : Props) => {
    
   }
 
-  return (<ImageBackground source={require("../../assets/bg_3.png")} style={styles.videoHomeBox}>
+  return (<ImageBackground source={imageBg} style={styles.videoHomeBox}>
       {isVideoPlaying&&<Video
         // source={require("../../assets/intro_video.mp4")}
         source={{uri:"https://bizzarro.org/images/intro_video.mp4"}}
@@ -88,5 +90,7 @@ const VideoHomePage:React.FC = (props : Props) => {
       <TouchableWithoutFeedback onPress={()=>playVideo()}><Image source={require("../../assets/play_icon.png")} style={styles.imageLogo}/></TouchableWithoutFeedback></>)}
   </ImageBackground>);
 };
-
+VideoHomePage.defaultProps = {
+  imageBg: require("../../assets/bg_3.png"),
+};
 export default VideoHomePage;

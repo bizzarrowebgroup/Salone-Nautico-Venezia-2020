@@ -1,10 +1,8 @@
 import React from "react"
-import { StyleSheet, Dimensions, ImageBackground, Text, TouchableOpacity } from "react-native"
-// import Constants from "expo-constants";
+import { StyleSheet, Dimensions, ImageBackground, Text, TouchableOpacity, ImageSourcePropType } from "react-native"
 import { LinearGradient } from "expo-linear-gradient";
 
 const SCREEN_HEIGHT = Dimensions.get("screen").height;
-// const SCREEN_HEIGHT = Dimensions.get("screen").height - Constants.statusBarHeight * 4;
 
 const styles = StyleSheet.create({
     expoContainer: {
@@ -14,7 +12,7 @@ const styles = StyleSheet.create({
     },
     overBox: {
         flex: 1,
-        opacity: .85
+        opacity: .80
     },
     expoBtn: {
         borderRadius: 5,
@@ -35,19 +33,28 @@ const styles = StyleSheet.create({
         textTransform: "uppercase"
     }
 })
-export interface Props {
-    backGroundImage?: string;
-    firstText?: Node;
-    secondText?: Node;
+
+interface Props {
+    backGroundImage?: ImageSourcePropType;
+    firstText?: React.FC;
+    secondText?: React.FC;
     firstBtn?: string;
     secondBtn?: string;
-    onPressFirstBtn? : () => void;
-    onPressSecondBtn? : () => void;
-    // onPress?: () => void;
+    onPressFirstBtn?: () => void;
+    onPressSecondBtn?: () => void;
 }
-const ExpositorCard = (props: Props) => {
+
+const ExpositorCard: React.FC<Props> = ({
+    backGroundImage,
+    firstText,
+    secondText,
+    firstBtn,
+    secondBtn,
+    onPressFirstBtn,
+    onPressSecondBtn
+}) => {
     function renderFirstText(){
-        const childrenText = props.firstText;
+        const childrenText = firstText;
         if(typeof childrenText === "string")
             return(
                 <Text>{childrenText}</Text>
@@ -56,7 +63,7 @@ const ExpositorCard = (props: Props) => {
         return childrenText;
     }
     function renderSecondText(){
-        const childrenText = props.secondText;
+        const childrenText = secondText;
         if(typeof childrenText === "string")
             return(
                 <Text>{childrenText}</Text>
@@ -65,8 +72,8 @@ const ExpositorCard = (props: Props) => {
         return childrenText;
     }
     function renderFirstBtn(){
-        const childrenText = props.firstBtn;
-        const onPress = props.onPressFirstBtn;
+        const childrenText = firstBtn;
+        const onPress = onPressFirstBtn;
         if(typeof childrenText === "string")
             return(
                 <TouchableOpacity style={styles.expoBtn} onPress={onPress}>
@@ -76,8 +83,8 @@ const ExpositorCard = (props: Props) => {
         if (!childrenText) return null;
     }
     function renderSecondBtn(){
-        const childrenText = props.secondBtn;
-        const onPress = props.onPressSecondBtn;
+        const childrenText = secondBtn;
+        const onPress = onPressSecondBtn;
         if(typeof childrenText === "string")
             return(
                 <TouchableOpacity style={styles.expoBtn} onPress={onPress}>
@@ -87,8 +94,7 @@ const ExpositorCard = (props: Props) => {
         if (!childrenText) return null;
     }
     return (
-        <ImageBackground style={styles.expoContainer} source={require("../../assets/bg_4.png")} resizeMode={"cover"}>
-            {/* <View style={styles.overBox}/> */}
+        <ImageBackground style={styles.expoContainer} source={backGroundImage} resizeMode={"cover"}>
             <LinearGradient colors={["#000566","#3649b7"]} style={styles.overBox}>
                 {renderFirstText()}
                 {renderFirstBtn()}
@@ -98,6 +104,8 @@ const ExpositorCard = (props: Props) => {
         </ImageBackground>
     )
 }
-
+ExpositorCard.defaultProps = {
+    backGroundImage: require("../../assets/bg_4.png"),
+}
 export default ExpositorCard
 

@@ -51,42 +51,46 @@ export interface Props {
   onPress?: () => void;
 }
 
-export default class Card extends React.Component<Props> {
-  render() {
-    const {isIntro, cardText, cardButton, onPress, doSmile} = this.props;
-    if (isIntro) {
-      return (<TouchableOpacity onPress={onPress} style={[
-          styles.container, {
-            flexDirection: "row",
-            padding: 10,
-            width: 321,
-            height: 206
-          }
-        ]}>
-        <Image source={require("../../assets/logovenezia.png")} style={styles.imageLogo}/>
-        <Image source={require("../../assets/logovela.png")} style={styles.imageLogo2}/>
-      </TouchableOpacity>);
-    } else {
-      return (<View style={[
-          styles.container, {
-            flexDirection: "column",
-            minHeight: 281,
-            marginVertical: 20,
-            marginHorizontal: 30,
-          },
-          doSmile ? {} : {
-            minWidth: 350
-          }
-        ]}>
-        <Text style={doSmile ? styles.textNotification : styles.textNotificationSmile}>{cardText}</Text>
-        {
-          cardButton
-            ? (<TouchableOpacity onPress={onPress} style={styles.buttonNotification}>
-              <Text style={styles.buttonText}>{cardButton}</Text>
-            </TouchableOpacity>)
-            : (<></>)
+const Card: React.FC<Props> = ({
+  isIntro, 
+  cardText, 
+  cardButton, 
+  onPress, 
+  doSmile
+}) => {
+  if (isIntro) {
+    return (<TouchableOpacity onPress={onPress} style={[
+        styles.container, {
+          flexDirection: "row",
+          padding: 10,
+          width: 321,
+          height: 206
         }
-      </View>);
-    }
+      ]}>
+      <Image source={require("../../assets/logovenezia.png")} style={styles.imageLogo}/>
+      <Image source={require("../../assets/logovela.png")} style={styles.imageLogo2}/>
+    </TouchableOpacity>);
   }
+  return (<View style={[
+        styles.container, {
+          flexDirection: "column",
+          minHeight: 281,
+          marginVertical: 20,
+          marginHorizontal: 30,
+        },
+        doSmile ? {} : {
+          minWidth: 350
+        }
+      ]}>
+      <Text style={doSmile ? styles.textNotification : styles.textNotificationSmile}>{cardText}</Text>
+      {
+        cardButton
+          ? (<TouchableOpacity onPress={onPress} style={styles.buttonNotification}>
+            <Text style={styles.buttonText}>{cardButton}</Text>
+          </TouchableOpacity>)
+          : (<></>)
+      }
+    </View>);
 }
+
+export default Card;
