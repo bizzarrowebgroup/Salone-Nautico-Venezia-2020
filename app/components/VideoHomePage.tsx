@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     height: 69,
     alignSelf: "center",
     position: "absolute",
-    bottom: 250
+    bottom: 200
   },
   opacityBox: {
     ...StyleSheet.absoluteFillObject,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     height: 189,
     alignSelf: "center",
     position: "absolute",
-    top: 366
+    top: 300
   },
   videoBoxStyle: {
     width: "100%",

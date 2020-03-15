@@ -7,6 +7,7 @@ import VideoHomePage from "./VideoHomePage";
 import ExpositorCard from "./ExpositorCard";
 import News from "./News";
 import SocialMedia from "./SocialMedia";
+import ArticleCard from "./ArticleCard";
 
 export {
     ButtonSkip,
@@ -17,5 +18,6 @@ export {
     VideoHomePage,
     ExpositorCard,
     News,
-    SocialMedia
+    SocialMedia,
+    ArticleCard
 };

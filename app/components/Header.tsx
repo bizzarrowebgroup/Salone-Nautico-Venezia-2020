@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   imageLogo: {
-    width: 150,
+    width: 152,
     height: 95,
     tintColor: "#001489"
   },

@@ -1,12 +1,14 @@
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+
+import { ArticleCard } from "./index"
 
 interface NewsProps{};
 
 const styles = StyleSheet.create({
     Container: {
         marginHorizontal: 25,
-        marginVertical: 30
+        marginTop: 30
     },
     TitleText: {
         color: "#001489",
@@ -23,10 +25,22 @@ const styles = StyleSheet.create({
 
 const News: React.FC<NewsProps> = () => {
     return (
+        <>
         <View style={styles.Container}>
             <Text style={styles.TitleText}>{"News"}</Text>
             <Text style={styles.subTitleText}>{"Gli ultimi articoli"}</Text>
         </View>
+        <ScrollView horizontal>
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+            <ArticleCard />
+        </ScrollView>
+        </>
     );
 };
 

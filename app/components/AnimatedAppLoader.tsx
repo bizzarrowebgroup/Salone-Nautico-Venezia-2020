@@ -4,6 +4,7 @@ import Constants from "expo-constants";
 import React from "react";
 import { Animated, StyleSheet, View } from "react-native";
 import * as Font from "expo-font";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 function AnimatedAppLoader({ children, image }) {
     const [isSplashReady, setSplashReady] = React.useState(false);
@@ -62,16 +63,17 @@ function AnimatedSplashScreen({ children, image }) {
                 require("../../assets/play_icon.png"),
                 require("../../assets/welcome_text.png"),
             ];
-            // const fonts = [{
-            //     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-            // }];
+            const fonts = [{
+                ...MaterialCommunityIcons.font,
+                // "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+            }];
             const cacheImages = images.map(image => {
                 return Asset.fromModule(image).downloadAsync();
             });
-            // const cacheFonts = fonts.map(font => {
-            //     return Font.loadAsync(font);
-            // })
-            await Promise.all([cacheImages]);
+            const cacheFonts = fonts.map(font => {
+                return Font.loadAsync(font);
+            })
+            await Promise.all([cacheImages,cacheFonts]);
         } catch (e) {
             console.log(e,"[errors-Apploading]")
         } finally {
