@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, View, Dimensions, ImageBackground, Text } from "react-native"
+import { StyleSheet, View, Dimensions, ImageBackground, Text, TouchableOpacity } from "react-native"
 import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -40,9 +40,11 @@ export interface Props {
     secondText?: Node;
     firstBtn?: string;
     secondBtn?: string;
+    onPressFirstBtn? : () => void;
+    onPressSecondBtn? : () => void;
     // onPress?: () => void;
 }
-const ExpositorCard: React.FC = (props: Props) => {
+const ExpositorCard = (props: Props) => {
     function renderFirstText(){
         const childrenText = props.firstText;
         if(typeof childrenText === "string")
@@ -63,21 +65,23 @@ const ExpositorCard: React.FC = (props: Props) => {
     }
     function renderFirstBtn(){
         const childrenText = props.firstBtn;
+        const onPress = props.onPressFirstBtn;
         if(typeof childrenText === "string")
             return(
-                <View style={styles.expoBtn}>
+                <TouchableOpacity style={styles.expoBtn} onPress={onPress}>
                     <Text style={styles.btnText}>{childrenText}</Text>
-                </View>
+                </TouchableOpacity>
             );
         if (!childrenText) return null;
     }
     function renderSecondBtn(){
         const childrenText = props.secondBtn;
+        const onPress = props.onPressSecondBtn;
         if(typeof childrenText === "string")
             return(
-                <View style={styles.expoBtn}>
+                <TouchableOpacity style={styles.expoBtn} onPress={onPress}>
                     <Text style={styles.btnText}>{childrenText}</Text>
-                </View>
+                </TouchableOpacity>
             );
         if (!childrenText) return null;
     }

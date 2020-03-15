@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {View, StyleSheet, ScrollView, Text,StatusBar} from "react-native";
-import {Header, VideoHomePage,ExpositorCard} from "../components/index";
+import {Header, VideoHomePage, ExpositorCard, News} from "../components/index";
 
 const styles = StyleSheet.create({
   dashboardBox: {
@@ -58,15 +58,28 @@ const SecondText = () => {
   )
 }
 
-export function DashboardScreen() {
+export type Props = {
+  navigation: any;
+};
+
+
+export function DashboardScreen(props: Props) {
   useEffect(() => {
     StatusBar.setBarStyle("dark-content",true)
   }, [])
   return (<View style={styles.dashboardBox}>
-    <View style={styles.headerBox}><Header/></View>
+    <View style={styles.headerBox}><Header onPress={()=>props.navigation.navigate("Home")}/></View>
     <ScrollView style={styles.dashboardBox}>
       <VideoHomePage/>
-      <ExpositorCard firstText={<FirstText/>} secondText={<SecondText/>} firstBtn={"Maggiori informazioni"} secondBtn={"Maggiori informazioni"}/>
+      <ExpositorCard 
+        firstText={<FirstText/>} 
+        secondText={<SecondText/>} 
+        firstBtn={"Maggiori informazioni"} 
+        secondBtn={"Maggiori informazioni"}
+        onPressFirstBtn={()=>console.log("Pressed be espositore")}
+        onPressSecondBtn={()=>console.log("Pressed be sponsor")}
+      />
+      <News />
     </ScrollView>
   </View>);
 }

@@ -5,6 +5,7 @@ import HeaderMenu from "./HeaderMenu";
 import AnimatedAppLoader from "./AnimatedAppLoader";
 import VideoHomePage from "./VideoHomePage";
 import ExpositorCard from "./ExpositorCard";
+import News from "./News";
 
 export {
     ButtonSkip,
@@ -13,5 +14,6 @@ export {
     Header,
     HeaderMenu,
     VideoHomePage,
-    ExpositorCard
+    ExpositorCard,
+    News
 };
