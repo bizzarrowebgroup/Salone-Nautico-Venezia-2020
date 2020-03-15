@@ -24,7 +24,7 @@
     ]
   },
   "name": "salone-nautico-di-venezia-2020",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Un app per il salone nautico di Venezia",
   "author": "BWG <info@bizzarro.org>",
   "private": true,

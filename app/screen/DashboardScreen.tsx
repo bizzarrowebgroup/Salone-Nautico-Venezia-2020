@@ -1,5 +1,5 @@
-import React from "react";
-import {View, StyleSheet, ScrollView, Text} from "react-native";
+import React, {useEffect} from "react";
+import {View, StyleSheet, ScrollView, Text,StatusBar} from "react-native";
 import {Header, VideoHomePage,ExpositorCard} from "../components/index";
 
 const styles = StyleSheet.create({
@@ -59,6 +59,9 @@ const SecondText = () => {
 }
 
 export function DashboardScreen() {
+  useEffect(() => {
+    StatusBar.setBarStyle("dark-content",true)
+  }, [])
   return (<View style={styles.dashboardBox}>
     <View style={styles.headerBox}><Header/></View>
     <ScrollView style={styles.dashboardBox}>

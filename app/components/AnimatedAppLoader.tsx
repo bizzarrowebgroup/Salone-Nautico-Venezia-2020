@@ -61,7 +61,6 @@ function AnimatedSplashScreen({ children, image }) {
                 require("../../assets/menu_icon.png"),
                 require("../../assets/play_icon.png"),
                 require("../../assets/welcome_text.png"),
-                require("../../assets/intro_video.mp4")
             ];
             // const fonts = [{
             //     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),

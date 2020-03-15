@@ -69,7 +69,8 @@ const VideoHomePage:React.FC = (props : Props) => {
 
   return (<ImageBackground source={require("../../assets/bg_3.png")} style={styles.videoHomeBox}>
       {isVideoPlaying&&<Video
-        source={require("../../assets/intro_video.mp4")} 
+        // source={require("../../assets/intro_video.mp4")}
+        source={{uri:"https://bizzarro.org/images/intro_video.mp4"}}
         ref={_videoPlayer}
         rate={1.0} 
         volume={1.0}
