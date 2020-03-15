@@ -1,5 +1,11 @@
+<h1 align="center">⛴ Salone Nautico di Venezia</h1>
+<h3 align="center">React Native app</h3>
+<br />
+
+![screenshots](https://raw.githubusercontent.com/bizzarrowebgroup/Salone-Nautico-Venezia-2020/master/preview.jpg)
+
 ![Expo Publish](https://github.com/bizzarrowebgroup/Salone-Nautico-Venezia-2020/workflows/Expo%20Publish/badge.svg)
-# ⛴ React Native app per il Salone Nautico di Venezia
+<br />
 
 Codice sorgente dell'App del [Salone Nautico di Venezia](https://www.salonenautico.venezia.it/).
 Fatta con React Native e Expo, e Typescript.
