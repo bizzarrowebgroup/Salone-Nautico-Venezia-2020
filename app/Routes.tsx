@@ -82,7 +82,7 @@ const DashboardRoute: React.FC = () => {
 
 export default function Routes() {
   return (<NavigationContainer>
-    <Stack.Navigator initialRouteName="DashBoard" headerMode={"float"} screenOptions={{
+    <Stack.Navigator initialRouteName="Home" headerMode={"float"} screenOptions={{
         gestureEnabled: false
       }}>
       <Stack.Screen name="Home" component={IntroScreen} options={{
