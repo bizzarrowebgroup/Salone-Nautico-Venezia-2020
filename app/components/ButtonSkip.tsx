@@ -27,6 +27,7 @@ interface Props {
 const defaultProps: Props = {
   buttonText: "Skip"
 };
+
 const ButtonSkip: React.FC<Props> = props => {
   const {buttonText, onPress} = props;
   return (<TouchableWithoutFeedback onPress={onPress}>

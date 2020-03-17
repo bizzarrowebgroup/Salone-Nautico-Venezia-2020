@@ -1,10 +1,12 @@
 import * as React from "react";
 import {View,Text,ScrollView} from "react-native";
+
 import IntroScreen from "./screen/IntroScreen";
 import WelcomeScreen from "./screen/WelcomeScreen";
 import WelcomeScreenIntro from "./screen/WelcomeScreenIntro";
 import WelcomeScreenNotification from "./screen/WelcomeScreenNotification";
 import DashboardScreen from "./screen/DashboardScreen";
+
 import {SocialMedia,Header} from "./components/index";
 import {
   DrawerContentScrollView,
@@ -82,7 +84,7 @@ const DashboardRoute: React.FC = () => {
 
 export default function Routes() {
   return (<NavigationContainer>
-    <Stack.Navigator initialRouteName="Home" headerMode={"float"} screenOptions={{
+    <Stack.Navigator initialRouteName="WelcomeIntro" headerMode={"float"} screenOptions={{
         gestureEnabled: false
       }}>
       <Stack.Screen name="Home" component={IntroScreen} options={{
