@@ -48,7 +48,11 @@ const DashboardScreen: React.FC<Props> = ({
     return (<View style={styles.dashboardBox}>
         <View style={styles.headerBox}><Header onPress={() => onPressHome()} /></View>
         <ScrollView style={styles.dashboardBox}>
-            <VideoHomePage imageBg={{ uri: "https://www.salonenautico.venezia.it/wp-content/uploads/2020/03/SNV_20_sito_2048x1280_r1_c1.jpg" }} />
+            <VideoHomePage
+                title={t("SEVENKEYdash")}
+                desc={t("HEIGHTKEYdash")}
+                imageBg={{ uri: "https://www.salonenautico.venezia.it/wp-content/uploads/2020/03/SNV_20_sito_2048x1280_r1_c1.jpg" }}
+            />
             <ExpositorCard
                 firstText={<FirstText />}
                 secondText={<SecondText />}

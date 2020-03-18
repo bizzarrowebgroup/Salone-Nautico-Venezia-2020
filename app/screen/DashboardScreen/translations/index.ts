@@ -8,6 +8,8 @@ interface TranslationKeys {
   FOURTHKEYdash: string;
   FIFTHKEYdash: string;
   SIXKEYdash: string;
+  SEVENKEYdash: string;
+  HEIGHTKEYdash: string;
 }
 
 export { it, en, TranslationKeys };
