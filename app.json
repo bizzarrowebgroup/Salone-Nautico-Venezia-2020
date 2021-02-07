@@ -4,7 +4,6 @@
     "description": "Applicazione del Salone Nautico di Venezia",
     "slug": "salone-nautico-venezia-2020",
     "privacy": "unlisted",
-    "sdkVersion": "36.0.0",
     "version": "0.0.4",
     "orientation": "portrait",
     "primaryColor": "#041a4c",
@@ -32,6 +31,8 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

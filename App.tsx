@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SplashScreen } from "expo";
+import * as SplashScreen from 'expo-splash-screen'
 
 // import { YellowBox } from "react-native";
 // import AssetExample from "./components/AssetExample";

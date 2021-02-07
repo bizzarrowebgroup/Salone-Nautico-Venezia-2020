@@ -1,4 +1,7 @@
-import { AppLoading, SplashScreen } from "expo";
+// import { AppLoading, SplashScreen } from "expo";
+import * as SplashScreen from 'expo-splash-screen'
+import AppLoading from 'expo-app-loading'
+
 import { Asset } from "expo-asset";
 import Constants from "expo-constants";
 import React from "react";
